@@ -1,0 +1,115 @@
+h1 {
+   
+    position: relative;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1::after{
+    
+    content: '';
+    width: 100%;
+    height: .2em;
+    background:linear-gradient(to right,blue , red);
+    position: absolute;
+    bottom:-0.2em;
+    left:0;
+
+}
+body {
+    background-color: #e0e0e0;;
+}
+.container {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 1600px;
+    text-align: center;
+}
+.container > .div {
+    display: inline-block;
+    width: 340px;           
+    height: 280px;          
+    margin: 20px;
+    text-align: center; 
+    border: 1px solid black;
+    padding: 15px;          
+    box-sizing: border-box; 
+    border-radius: 10px;
+        transition: 0.5s linear ;
+        background-color: white;
+    
+    
+}
+
+.gradient {
+    width: 300px;           
+    height: 180px;         
+    border-radius: 10px;
+    
+}
+.div:hover {
+    transform: scale(1.08);
+}
+
+
+
+.container > .div > p {
+    margin: 15px 0 0 0;     
+    
+    font-size: x-large;
+}
+
+/* .container > .div {
+    display: inline-block;
+    width: 300px; 
+    height: 250px; 
+    margin: 30px;
+    text-align: center; 
+    border: 1px solid black;
+    padding:20px;
+    border-radius: 15px;
+}
+
+.container > .div > div {
+    width:300px;
+    height: 200px; 
+    
+    border-radius: 10px;
+} */
+.gradient1 {
+    background: linear-gradient(30deg,red 5%, blue);
+}
+.gradient2 {
+    background: linear-gradient(90deg, green, yellow)
+}
+.gradient3 {
+    background: linear-gradient(100deg, white, green 30%, blue)
+}
+.gradient4 {
+    background: linear-gradient(270deg, orange 20%, yellow, black)
+}
+.gradient5 {
+    background: radial-gradient(red , black);
+}
+.gradient6 {
+    background: radial-gradient(circle, yellow, white );
+}
+.gradient7 {
+    background: radial-gradient(at right , cyan, white);
+}
+.gradient8 {
+    background: radial-gradient(at bottom, brown, pink);
+}
+.gradient9 {
+    background: repeating-linear-gradient(rgb(186, 15, 152) 0px, blue 20px);
+}
+.gradient10 {
+    background: repeating-linear-gradient(red 5px, green 10px, blue 20px);
+}
+.gradient11 {
+    background: repeating-radial-gradient(circle, black 5px, white 6px);
+}
+.gradient12 {
+    background: repeating-radial-gradient(at left,green 10px, purple 60px);
+}
+
