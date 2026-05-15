@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        .container {
+            
+            margin:0 auto;
+            padding:50px;
+            width: 300px;
+            background-color: black;
+            color:white;
+            position: relative;
+            border-radius: 15px;
+        }
+        @property --angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width:100%;
+            height: 100%;
+            padding: 10px;
+            top:50%;
+            left:50%;
+            translate: -50% -50%;
+            background:conic-gradient(from var(--angle),red, green,blue, red);
+            z-index: -1;
+            animation:1s infinite anime linear ;
+            border-radius: 15px;
+        }
+        .container::before {
+            filter: blur(1.5rem);
+        }
+        @keyframes anime {
+            from {
+                --angle: 0deg;
+            }
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        select {
+            position: relative;
+        }
+        select, select::picker(select) {
+            top: anchor(bottom);
+            bottom: auto;
+            appearance: base-select;
+            color:white;
+            background-color: black;
+            width:170px;
+            
+        }
+        option {
+            transition: margin-left 0.3s linear;
+        }
+        option:hover {
+            margin-left:15px;
+        }
+        select::picker-icon {
+            transition: rotate linear 150ms;
+        }
+        select::picker(select) {
+            border-radius: 12px;
+        }
+        
+        select:open::picker-icon {
+           rotate: 180deg; 
+        }
+
+        select option:checked {
+            background-color: rgb(50, 50, 50);
+        }
+
+        option::checkmark {
+            color:yellowgreen;
+        }
+        option {
+    padding: 8px 12px; /* Większa strefa kliknięcia */
+    border-radius: 8px; /* Zaokrąglenie podświetlenia */
+    margin: 2px 4px; /* Marginesy wewnętrzne między opcjami */
+    transition: margin-left 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-out 0.2s;
+}
+
+option:hover {
+    margin-left: 15px;
+    background-color: rgb(30, 30, 30); /* Subtelne tło podczas najechania */
+}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum temporibus necessitatibus cupiditate rem? Sequi voluptates id libero minima itaque.</p>
+        <select class="sel">
+            <option value="1">Opcja 1</option>
+            <option value="2">Opcja 2</option>
+            <option value="3">Opcja 3</option>
+        </select>
+    </div>
+</body>
+</html>
